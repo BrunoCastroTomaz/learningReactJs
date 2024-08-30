@@ -1,5 +1,7 @@
 import styles from './Post.module.css';
 
+import { Comment } from './Comment.jsx';
+
 export function Post(){
 	return (
 		<article className={styles.post}>
@@ -11,15 +13,24 @@ export function Post(){
 						<span>Full Stack Developer</span>
 					</div>
 				</div>
-
 				<time title="29 de Agosto às 08h13" dateTime="2024-08-29 08:13:38">Publicado há 1h</time>
 			</header>
 
 			<div className={styles.content}>
 				<p>Fala galeraa 👋</p>
-
 				<p>Acabei de subir mais um projeto no meu portifolio. É um projeto chamado Social Bruno, uma página estática feita em React !!</p>
 				<p>👉 <a href="https://www.linkedin.com/in/bruno-castro-tomaz-5b2139249/">in/bruno-castro-tomaz-5b2139249</a></p>
+			</div>
+
+			<form className={styles.commentForm}>
+				<strong>Deixe seu feedback</strong>
+				<textarea placeholder="Deixe um comentário"/>
+				<footer>
+					<button type="submit">Publicar</button>
+				</footer>
+			</form>
+			<div className={styles.commentList}>
+				<Comment />
 			</div>
 		</article>
 	)
